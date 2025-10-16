@@ -60,7 +60,7 @@ Follow these steps sequentially. As a complete beginner, open terminals (Command
 Kafka enables async events like `CarListedEvent` or `TransactionCompletedEvent`.
 
 1. In the project root (`riderecs-ai/`), create `docker-compose.yml` by copying this content:
-
+```json
 version: '3.8'
 
 services:
@@ -91,7 +91,7 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
-
+```
 
 2. Run: `docker-compose up -d` (detached mode).
 3. Verify: `docker ps` (shows running containers).
@@ -145,6 +145,7 @@ Demonstrate via Postman (sample inputs only; outputs depend on runtime data). No
 ### 1. User Registration (Seller)
 **Endpoint**: POST `http://localhost:8082/api/users/register`  
 **Input**:
+```json
 {
 "email": "john.seller@example.com",
 "password": "password123",
@@ -153,12 +154,13 @@ Demonstrate via Postman (sample inputs only; outputs depend on runtime data). No
 "phoneNumber": "0412345678",
 "userType": "SELLER"
 }
-
+```
 *Purpose*: Onboard sellers for listings.
 
 ### 2. Create & Search Car Listing
 **Endpoint**: POST `http://localhost:8081/api/car-listings`  
 **Input**:
+```json
 {
 "make": "Toyota",
 "model": "Camry",
@@ -169,7 +171,7 @@ Demonstrate via Postman (sample inputs only; outputs depend on runtime data). No
 "description": "Well-maintained family sedan",
 "sellerId": 1
 }
-
+```
 **Follow-up**: GET `http://localhost:8081/api/car-listings/search?make=Toyota&model=Camry`  
 *Purpose*: List/search cars; auto-publishes event for analytics.
 
@@ -181,6 +183,7 @@ Demonstrate via Postman (sample inputs only; outputs depend on runtime data). No
 ### 4. Transaction Creation
 **Endpoint**: POST `http://localhost:8083/api/transactions`  
 **Input**:
+```json
 {
 "carId": 1,
 "buyerId": 2,
@@ -188,12 +191,13 @@ Demonstrate via Postman (sample inputs only; outputs depend on runtime data). No
 "amount": 25000,
 "paymentMethod": "Bank Transfer"
 }
-
+```
 *Purpose*: Complete sale; triggers completion event.
 
 ### 5. AI Price Recommendation
 **Endpoint**: POST `http://localhost:8084/api/ai-insights/price-recommendation`  
 **Input**:
+```json
 {
 "make": "Honda",
 "model": "Civic",
@@ -202,17 +206,18 @@ Demonstrate via Postman (sample inputs only; outputs depend on runtime data). No
 "condition": "Good",
 "currentPrice": 22000
 }
-
+```
 *Purpose*: LLM agent suggests adjustments (via LangChain4j + Ollama).
 
 ### 6. AI Buyer Assistant
 **Endpoint**: POST `http://localhost:8084/api/ai-insights/buyer-assistant`  
 **Input**:
+```json
 {
 "query": "What's the best sedan under $20,000?",
 "context": "Available cars: Toyota Camry 2018 ($25,000), Honda Civic 2020 ($22,000), Mazda 3 2019 ($18,500)"
 }
-
+```
 *Purpose*: Conversational AI for buyer guidance.
 
 Pre-run listings/transactions for context. For stream demos, create multiple listings to see analytics update.
@@ -233,6 +238,6 @@ Apache Software Foundation (2024) *Apache Kafka Documentation*. Available at: ht
 
 Ollama (2024) *Ollama Documentation*. Available at: https://ollama.com/docs (Accessed: 16 October 2025).
 
-LangChain4j (2024) *LangChain4j Documentation*. Available at: https://docs.langchain4j.dev/ (Accessed: 16 October 2025).
+LangChain4j (2024) *LangChain4j Documentation*. Available at: https://docs.langchain4j.dev/ (Accessed: 13 October 2025).
 
 
