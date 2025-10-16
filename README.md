@@ -11,7 +11,7 @@ Core features include:
 - Real-time analytics via stream processing
 - AI-driven price recommendations and buyer query assistance
 
-This repository includes full source code, configuration files, a Docker Compose setup for Kafka/Zookeeper, and a complete Postman collection for API testing. **Important: Keep this repository private until project submission to avoid sharing with other groups, as per the CSCI318 guidelines.**
+This repository includes full source code, configuration files, a Docker Compose setup for Kafka/Zookeeper, and a complete Postman collection for API testing. **Important: Our team is keeping this repository private until project submission to avoid sharing with other groups, as per the CSCI318 guidelines.**
 
 ## Prerequisites
 
