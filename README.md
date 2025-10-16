@@ -21,7 +21,7 @@ Before setup, ensure the following are installed:
 - **Docker**: Verify with `docker --version` (for Kafka and Zookeeper).
 - **Ollama**: Download from [ollama.com](https://ollama.com) for local AI inference (no API keys needed).
 - **Postman**: Optional, but essential for testing APIs (download from [postman.com](https://www.postman.com/downloads/)).
-- **IDE**: IntelliJ IDEA recommended for beginners (free Community Edition available).
+- **IDE**: IntelliJ IDEA or any IDE of choice.
 - **Operating System**: Tested on Windows; adaptable to macOS/Linux.
 
 All services use H2 in-memory database for local development—no external DB setup required. Internet is only needed for initial downloads.
@@ -54,7 +54,7 @@ Each service is self-contained with mandatory dependencies: Spring Web, Spring D
 
 ## Setup and Running Instructions
 
-Follow these steps sequentially. As a complete beginner, open terminals (Command Prompt on Windows) for each command. Use `Ctrl+C` to stop services.
+Follow these steps sequentially. Open terminals (Command Prompt on Windows) for each command. Use `Ctrl+C` to stop services.
 
 ### 1. Launch Kafka and Zookeeper (Event-Driven Backbone)
 Kafka enables async events like `CarListedEvent` or `TransactionCompletedEvent`.
@@ -124,7 +124,7 @@ Success: Access `http://localhost:8081/api/car-listings` (returns empty array in
 
 The included `RideRecs-Postman-Collection.json` covers all endpoints across services. It pre-populates sample data for demos.
 
-### Import Guide (Beginner-Friendly)
+### Import Guide 
 1. Install/Launch Postman.
 2. Copy the JSON from the file into Notepad, save as `RideRecs-Postman-Collection.json` (All Files type, Desktop location).
 3. In Postman: Collections > Import > Drag the JSON file.
