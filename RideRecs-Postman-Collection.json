@@ -1,0 +1,555 @@
+{
+  "info": {
+    "name": "RideRecs AI - Complete Collection",
+    "description": "Complete API collection for RideRecs AI car sales platform with all 4 microservices",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. User Management Service (Port 8082)",
+      "item": [
+        {
+          "name": "Register Seller User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"john.seller@example.com\",\n  \"password\": \"password123\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Seller\",\n  \"phoneNumber\": \"0412345678\",\n  \"userType\": \"SELLER\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8082/api/users/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8082",
+              "path": ["api", "users", "register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register Buyer User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"jane.buyer@example.com\",\n  \"password\": \"buyer456\",\n  \"firstName\": \"Jane\",\n  \"lastName\": \"Buyer\",\n  \"phoneNumber\": \"0423456789\",\n  \"userType\": \"BUYER\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8082/api/users/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8082",
+              "path": ["api", "users", "register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"john.seller@example.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8082/api/users/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8082",
+              "path": ["api", "users", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8082",
+              "path": ["api", "users"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/users/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8082",
+              "path": ["api", "users", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "2. Car Listings Service (Port 8081)",
+      "item": [
+        {
+          "name": "Create Car Listing - Toyota Camry",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"make\": \"Toyota\",\n  \"model\": \"Camry\",\n  \"year\": 2018,\n  \"price\": 25000,\n  \"mileage\": 45000,\n  \"condition\": \"Excellent\",\n  \"description\": \"Well-maintained family sedan with full service history\",\n  \"sellerId\": 1\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/car-listings",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "car-listings"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Car Listing - Honda Civic",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"make\": \"Honda\",\n  \"model\": \"Civic\",\n  \"year\": 2020,\n  \"price\": 22000,\n  \"mileage\": 30000,\n  \"condition\": \"Good\",\n  \"description\": \"Sporty compact car, excellent fuel economy\",\n  \"sellerId\": 1\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/car-listings",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "car-listings"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Car Listing - Mazda 3",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"make\": \"Mazda\",\n  \"model\": \"3\",\n  \"year\": 2019,\n  \"price\": 18500,\n  \"mileage\": 52000,\n  \"condition\": \"Good\",\n  \"description\": \"Fun to drive, great handling\",\n  \"sellerId\": 1\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/car-listings",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "car-listings"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Car Listings",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/car-listings",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "car-listings"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Available Car Listings",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/car-listings/available",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "car-listings", "available"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Car Listing By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/car-listings/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "car-listings", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search By Make and Model",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/car-listings/search?make=Toyota&model=Camry",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "car-listings", "search"],
+              "query": [
+                {
+                  "key": "make",
+                  "value": "Toyota"
+                },
+                {
+                  "key": "model",
+                  "value": "Camry"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search By Price Range",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/car-listings/search/price?minPrice=15000&maxPrice=25000",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "car-listings", "search", "price"],
+              "query": [
+                {
+                  "key": "minPrice",
+                  "value": "15000"
+                },
+                {
+                  "key": "maxPrice",
+                  "value": "25000"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "3. Stream Processing Analytics (Port 8081)",
+      "item": [
+        {
+          "name": "Get Most Popular Makes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/analytics/popular-makes",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "analytics", "popular-makes"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Average Price By Make",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/analytics/average-price-by-make",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "analytics", "average-price-by-make"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Average Price By Year",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/analytics/average-price-by-year",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "analytics", "average-price-by-year"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Top Expensive Cars",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/analytics/top-expensive?limit=3",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "analytics", "top-expensive"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "4. Transactions Service (Port 8083)",
+      "item": [
+        {
+          "name": "Create Transaction",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"carId\": 1,\n  \"buyerId\": 2,\n  \"sellerId\": 1,\n  \"amount\": 25000,\n  \"paymentMethod\": \"Bank Transfer\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/transactions",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8083",
+              "path": ["api", "transactions"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Transactions",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8083/api/transactions",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8083",
+              "path": ["api", "transactions"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Transaction By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8083/api/transactions/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8083",
+              "path": ["api", "transactions", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Transactions By Buyer ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8083/api/transactions/buyer/2",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8083",
+              "path": ["api", "transactions", "buyer", "2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Transactions By Seller ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8083/api/transactions/seller/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8083",
+              "path": ["api", "transactions", "seller", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Transaction Status",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"COMPLETED\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/transactions/1/status",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8083",
+              "path": ["api", "transactions", "1", "status"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "5. AI Insights Service (Port 8084)",
+      "item": [
+        {
+          "name": "Get AI Price Recommendation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"make\": \"Honda\",\n  \"model\": \"Civic\",\n  \"year\": 2020,\n  \"mileage\": 30000,\n  \"condition\": \"Good\",\n  \"currentPrice\": 22000\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8084/api/ai-insights/price-recommendation",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8084",
+              "path": ["api", "ai-insights", "price-recommendation"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Ask AI Buyer Assistant",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"What's the best sedan under $20,000?\",\n  \"context\": \"Available cars: Toyota Camry 2018 ($25,000), Honda Civic 2020 ($22,000), Mazda 3 2019 ($18,500)\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8084/api/ai-insights/buyer-assistant",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8084",
+              "path": ["api", "ai-insights", "buyer-assistant"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All AI Insights",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8084/api/ai-insights/insights",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8084",
+              "path": ["api", "ai-insights", "insights"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get AI Insight For Car",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8084/api/ai-insights/insights/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8084",
+              "path": ["api", "ai-insights", "insights", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
