@@ -29,7 +29,7 @@ All services use H2 in-memory database for local development—no external DB se
 ## Project Structure
 
 The monorepo structure organises four microservices for easy management:
-
+```json
 riderecs-ai/
 ├── docker-compose.yml # Kafka + Zookeeper setup
 ├── RideRecs-Postman-Collection.json # API testing collection
@@ -49,8 +49,7 @@ riderecs-ai/
 ├── pom.xml
 ├── src/main/java/...
 └── README.md
-
-
+```
 Each service is self-contained with mandatory dependencies: Spring Web, Spring Data JPA, H2, Spring Cloud Stream (for Kafka), and LangChain4j (for AI).
 
 ## Setup and Running Instructions
