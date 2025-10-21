@@ -28,7 +28,7 @@ All services use H2 in-memory database for local development—no external DB se
 
 ## GenAI Acknowledgment
 
-This project utilized Large Language Models (LLMs) to assist with code generation and documentation. Specific instances include:
+This project utilised Large Language Models (LLMs) to assist with code generation and documentation. Specific instances include:
 
 - **Boilerplate microservice structure**: ChatGPT/Copilot generated initial Spring Boot project scaffolding for all four services (User Management, Car Listings, Transactions, AI Insights).
 - **Docker Compose configuration**: AI-assisted generation of Kafka/Zookeeper docker-compose.yml with standard Confluent images.
